@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import FileUploader from './file-uploader'
 
 class App extends Component {
   render() {
     return (
       <div>
-        Hello World!
-        This is your starter build.
+        <FileUploader />
       </div>
     );
   }
