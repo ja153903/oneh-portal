@@ -11,7 +11,7 @@ class FileUploader extends Component {
 
     onDrop(files) {
         this.setState({
-            files
+            files: [...this.state.files, files]
         })
     }
 
