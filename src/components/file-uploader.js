@@ -10,9 +10,18 @@ class FileUploader extends Component {
     }
 
     onDrop(files) {
-        this.setState({
-            files: [...this.state.files, files]
-        })
+        files.forEach(file => {
+            const reader = new FileReader();
+            reader.onload = () => {
+                const fileAsDataURL = reader.result;
+                
+                this.setState({
+                    files: [...this.state.files, fileAsDataURL]
+                });
+            };
+            
+            reader.readAsDataURL(file);
+        });
     }
 
     render() {
